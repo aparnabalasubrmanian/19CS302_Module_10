@@ -41,7 +41,6 @@ while(temp!=NULL)
 if(temp->data == item) 
 { 
  
- SAVEETHA ENGINEERING COLLEGE  
 printf("item %d found at location %d",item,i+1); 
 flag=0; 
 } 
