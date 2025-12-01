@@ -19,43 +19,91 @@ To write a C functions to perform all basic operations in Doubly Linked List.
 Developed by: Aparna RB
 RegisterNumber:  212222220005
 */
-struct Node 
-{ 
-struct Node *prev; 
-struct Node *next; 
-int data; 
-}*head; 
- 
-void search(int data) 
-{ 
-struct Node *temp; 
-int item=data,i=0,flag; 
-temp=head; 
-if(temp==NULL) 
-{ 
-printf("Empty list\n"); 
-} 
-else{ 
-while(temp!=NULL) 
-{ 
-if(temp->data == item) 
-{ 
-printf("item %d found at location %d",item,i+1); 
-flag=0; 
-} 
-i++; 
-temp=temp->next; 
-} 
-if(flag!=0) 
-{ 
-printf("Item not found\n"); 
-} 
-} 
+struct Node
+{
+    char data; 
+    struct Node *next;
+    struct Node *prev;
+}*head;
+void display()
+{
+    struct Node *ptr;
+    ptr=head;
+    while(ptr!=NULL)
+    {
+        printf("%c\n",ptr->data);
+        ptr=ptr->next;
+    }
+}
+void insert(char data)
+{
+    struct Node *ptr;
+    struct Node *n=(struct Node*)malloc(sizeof(struct Node));
+    if(head==NULL)
+    {
+        head=n;
+        head->data=data;
+        n->next=NULL;
+        return;
+    }
+    ptr=head;
+    while(ptr->next!=NULL)
+    {
+        ptr=ptr->next;
+    }
+    n->data=data;
+    n->next=NULL;
+    ptr->next=n;
+}
+void search(char data)
+{
+    struct Node *ptr;
+    char item=data;
+    int i=0,flag;
+    ptr = head;
+    while (ptr!=NULL)
+    {
+        if(ptr->data == item)
+        {
+            printf("item %c found at location %d\n",item,i+1);
+            flag=0;
+        }
+        i++;
+        ptr = ptr -> next;
+    }
+    if(flag!=0)
+    {
+        printf("Item not found\n");
+    }
+}
+void delete()
+{
+    struct Node *ptr;
+    
+    if(head==NULL)
+    {
+        printf("UNDERFLOW");
+        
+    }
+    else if(head->next==NULL)
+    {
+        head=NULL;
+        free(head);
+        printf("Node deleted\n");
+    }
+    else
+    {
+        ptr=head;
+        head=ptr->next;
+        free(ptr);
+        printf("Node deleted\n");
+    }
 }
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/3c81dbb8-b5c0-4ec3-bd1c-e90171a84133)
+<img width="699" height="789" alt="image" src="https://github.com/user-attachments/assets/569910e9-08a6-4160-909e-858b0fb380b1" />
+
 
 
 ## Result:
