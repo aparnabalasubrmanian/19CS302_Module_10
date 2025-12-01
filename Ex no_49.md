@@ -46,9 +46,10 @@ void search(float data)
         printf("Item not found");
     }
 }
-
+```
 ## Output:
-![image](https://github.com/user-attachments/assets/f88735dd-ab41-4d79-8334-1db4eae38a63)
+<img width="860" height="570" alt="image" src="https://github.com/user-attachments/assets/700301d6-f9ac-47aa-9831-96f15627c204" />
+
 
 
 ## Result:
